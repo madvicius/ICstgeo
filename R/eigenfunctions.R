@@ -1,11 +1,12 @@
-timeFunction = function(Y, #manter a entrada como matriz Y ou a funcao transforma em matriz?
-                        t, 
-                        s,
+timeFunction = function(y, #manter a entrada como matriz Y ou a funcao transforma em matriz?
+                        t,
                         basetype = 'spline', # tipo de base, fohrier ou spline
                         nfunc = 3, # numero de altofuncoes
                         ...){ 
   
   require(fda) # tem como dependencia o pacote fda
+  
+  Y = matrix(y,ncol=length(t),byrow = TRUE) %>% t()
   
   baseFunction = switch (basetype,
                          'spline' = create.bspline.basis,
