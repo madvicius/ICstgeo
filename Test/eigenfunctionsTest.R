@@ -12,7 +12,8 @@ Y = matrix(y,ncol=9,byrow = TRUE) %>% t()
 #t = st$Periodo
 s = st[c('Latitude','Longitude')] %>% unique()
 t = 1:9
-timeFunction(Y,t,s,
+
+teigen = timeFunction(Y,t,s,
              rangeval = c(1,9),nbasis = 6,norder = 3)
 
 
