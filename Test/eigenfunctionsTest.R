@@ -13,7 +13,7 @@ Y = matrix(y,ncol=9,byrow = TRUE) %>% t()
 s = st[c('Latitude','Longitude')] %>% unique()
 t = 1:9
 
-teigen = timeFunction(Y,t,s,
+teigen = timeFunction(Y,t,basetype = 'spline',nfunc=2,
              rangeval = c(1,9),nbasis = 6,norder = 3)
 
 
